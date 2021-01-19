@@ -272,7 +272,7 @@ def main():
                 if user_input_number == "0":
                     break
                 if not is_validated_number(user_input_number):
-                    print("Wrong Input, Input again")
+                    print("WRONG INPUT")
                     continue
                 s, b = get_strikes_or_ball(user_input_number, random_number)
                 print(f'Strikes : {s} , Balls : {b}')
@@ -286,7 +286,7 @@ def main():
                         elif is_yes(deter):
                             flag = 2
                         else:
-                            print("Wrong Input, Input again")
+                            print("WRONG INPUT")
                 if flag == 1 or flag == 2:
                     break
         else:
