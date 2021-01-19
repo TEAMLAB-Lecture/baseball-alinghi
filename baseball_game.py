@@ -5,8 +5,6 @@ import re
 
 
 def get_random_number():
-    # Helper Function - 지우지 말 것
-    # 100부터 999까지 수를 램덤하게 반환함
     return random.randrange(100, 1000)
 
 
@@ -259,37 +257,30 @@ def is_no(one_more_input):
 
 
 def main():
-    flag = 2
     print("Play Baseball")
-    while True:
-        if flag == 2:
-            flag = 0
-
-            random_number = str(get_not_duplicated_three_digit_number())
-            print("Random Number is : ", random_number)
-            while True:
-                user_input_number = input("Input guess number : ")
-                if user_input_number == "0":
-                    break
-                if not is_validated_number(user_input_number):
-                    print("Wrong Input")
-                    continue
-                s, b = get_strikes_or_ball(user_input_number, random_number)
-                print(f'Strikes : {s} , Balls : {b}')
-                if s == 3:
-                    flag = 0
-                    while flag == 0:
-                        deter = input("You win, one more(Y/N) ?")
-                        if is_no(deter):
-                            flag = 1
-                        elif is_yes(deter):
-                            flag = 2
-                        else:
-                            print("Wrong Input")
-                if flag == 1 or flag == 2:
-                    break
-        else:
-            break
+    flag = 2
+    while flag == 2:
+        flag = 0
+        random_number = str(get_not_duplicated_three_digit_number())
+        print("Random Number is : ", random_number)
+        while flag == 0:
+            user_input_number = input("Input guess number : ")
+            if user_input_number == "0":
+                break
+            if not is_validated_number(user_input_number):
+                print("Wrong Input")
+                continue
+            s, b = get_strikes_or_ball(user_input_number, random_number)
+            print(f'Strikes : {s} , Balls : {b}')
+            if s == 3:
+                while flag == 0:
+                    deter = input("You win, one more(Y/N) ?")
+                    if is_no(deter):
+                        flag = 1
+                    elif is_yes(deter):
+                        flag = 2
+                    else:
+                        print("Wrong Input")
     print("Thank you for using this program")
     print("End of the Game")
 
