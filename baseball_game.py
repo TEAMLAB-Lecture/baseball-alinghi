@@ -267,8 +267,7 @@ def main():
             random_number = str(get_not_duplicated_three_digit_number())
             print("Random Number is : ", random_number)
             while True:
-                print("Input guess number : ", end="")
-                user_input_number = input()
+                user_input_number = input("Input guess number : ")
                 if user_input_number == "0":
                     break
                 if not is_validated_number(user_input_number):
@@ -279,8 +278,7 @@ def main():
                 if s == 3:
                     flag = 0
                     while flag == 0:
-                        print("You win, one more(Y/N) ?", end="")
-                        deter = input()
+                        deter = input("You win, one more(Y/N) ?")
                         if is_no(deter):
                             flag = 1
                         elif is_yes(deter):
