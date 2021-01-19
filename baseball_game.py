@@ -260,10 +260,11 @@ def is_no(one_more_input):
 
 def main():
     flag = 2
+    print("Play Baseball")
     while True:
         if flag == 2:
             flag = 0
-            print("Play Baseball")
+
             random_number = str(get_not_duplicated_three_digit_number())
             print("Random Number is : ", random_number)
             while True:
@@ -271,7 +272,7 @@ def main():
                 if user_input_number == "0":
                     break
                 if not is_validated_number(user_input_number):
-                    print("WRONG INPUT")
+                    print("Wrong Input")
                     continue
                 s, b = get_strikes_or_ball(user_input_number, random_number)
                 print(f'Strikes : {s} , Balls : {b}')
@@ -284,7 +285,7 @@ def main():
                         elif is_yes(deter):
                             flag = 2
                         else:
-                            print("WRONG INPUT")
+                            print("Wrong Input")
                 if flag == 1 or flag == 2:
                     break
         else:
